@@ -3,10 +3,11 @@ void printArray(string[] array)
 {
 System.Console.Write("[");
 
-int i = 0;
-while (i < array.Length)
+int i = 1;
+System.Console.Write(array[0]);
+while (i < array.Length && array[i] != null)
 {
-    System.Console.Write($"{array[i]}\t");
+    System.Console.Write($", {array[i]}");
     i ++;
 }
 
@@ -15,7 +16,7 @@ System.Console.WriteLine("]");
 
 string[] NewArray(string[] array)
 {
-   var result = new string[array.Length];
+   string[] result = new string[array.Length];
    var i = 0;
    foreach (var value in array )
    {
@@ -24,8 +25,9 @@ string[] NewArray(string[] array)
         result[i] = value;
         i++;
     }
-    return result;
+    
    }
+   return result;
 }
 
 string[] array = {"hello","world","i","love","you"};
